@@ -1,0 +1,354 @@
+{
+	"info": {
+		"_postman_id": "fb657f6d-e0bf-4364-a188-7c613dc0aa9d",
+		"name": "PVZ Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27118298"
+	},
+	"item": [
+		{
+			"name": "Dummy Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"role\": \"employee\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/dummyLogin",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dummyLogin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"juan@mail.ru\",\r\n    \"password\": \"lemon890\",\r\n    \"role\": \"employee\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"juan@mail.ru\",\r\n    \"password\": \"lemon890\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add PVZ (moderator)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDQ2MjYyMDksInJvbGUiOiJtb2RlcmF0b3IifQ.fBfTpOyX6F7ICap1alygVFv4ejtQQqNdSKAmQxDioNU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDQzNjcyNTksInJvbGUiOiJtb2RlcmF0b3IifQ.4u7UTx5sHeBSZOt3byvGmjwZbcSZ_QUcpUi5vKucmds",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"city\": \"Казань\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/pvz",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pvz"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add reception (employee)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDQ2MjYyODAsInJvbGUiOiJlbXBsb3llZSJ9.CoXQTW61ajw8Fo812ilWbRHo3ZxQ6XgIXF-NQhnl63U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"pvzId\": \"5964fb20-b256-4e63-8485-b15dde572b6e\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/receptions",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"receptions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add product (employee)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDQ2MjYyODAsInJvbGUiOiJlbXBsb3llZSJ9.CoXQTW61ajw8Fo812ilWbRHo3ZxQ6XgIXF-NQhnl63U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"pvzId\": \"5964fb20-b256-4e63-8485-b15dde572b6e\",\r\n    \"type\": \"электроника\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/products",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete product (employee)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDQ1NjAwMzcsInJvbGUiOiJlbXBsb3llZSJ9.F9o3TEu3jG1zcF3r-l-Fk-N_1Q6E-0opBH2i9UypMww",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/pvz/24833db3-24d6-4191-a57d-70cf85afbeb3/delete_last_product",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pvz",
+						"24833db3-24d6-4191-a57d-70cf85afbeb3",
+						"delete_last_product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Close reception (employee)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDQ1NjAwMzcsInJvbGUiOiJlbXBsb3llZSJ9.F9o3TEu3jG1zcF3r-l-Fk-N_1Q6E-0opBH2i9UypMww",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/pvz/24833db3-24d6-4191-a57d-70cf85afbeb3/close_last_reception",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pvz",
+						"24833db3-24d6-4191-a57d-70cf85afbeb3",
+						"close_last_reception"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get PVZS (employee and moderator)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDQ2MjYyODAsInJvbGUiOiJlbXBsb3llZSJ9.CoXQTW61ajw8Fo812ilWbRHo3ZxQ6XgIXF-NQhnl63U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/pvz?startDate=2025-04-12T15:08:57Z&endDate=2025-04-13T13:23:55Z",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pvz"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "2025-04-12T15:08:57Z"
+						},
+						{
+							"key": "endDate",
+							"value": "2025-04-13T13:23:55Z"
+						},
+						{
+							"key": "page",
+							"value": "2",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Metrics",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDQzODQ0NzAsInJvbGUiOiJlbXBsb3llZSJ9.CSGTiOLqiIXWu0hNzmn6X988lcTz4Qb4appPYlPD14Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9000/metrics",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"metrics"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

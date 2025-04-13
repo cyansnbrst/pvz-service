@@ -1,0 +1,7 @@
+DROP TABLE IF EXISTS users;
+
+DROP TABLE IF EXISTS pvzs;
+
+DROP TABLE IF EXISTS receptions;
+
+DROP TABLE IF EXISTS products;

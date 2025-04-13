@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package pvz.v1;
+
+option go_package = "github.com/cyansnbrst/pvz-service/pvz_v1;pvz_v1";
+
+import "google/protobuf/timestamp.proto";
+
+service PVZService {
+  rpc GetPVZList(GetPVZListRequest) returns (GetPVZListResponse);
+}
+
+message PVZ {
+  string id = 1;
+  google.protobuf.Timestamp registration_date = 2;
+  string city = 3;
+}
+
+message GetPVZListRequest {}
+
+message GetPVZListResponse {
+  repeated PVZ pvzs = 1;
+}

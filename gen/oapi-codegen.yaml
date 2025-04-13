@@ -1,0 +1,7 @@
+package: pvzapi
+generate:
+  - types
+  - echo-server
+output: gen/pvzapi/pvz.gen.go
+import-mapping:
+  google.protobuf.Timestamp: "time"

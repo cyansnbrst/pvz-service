@@ -1,0 +1,54 @@
+version: 1
+
+issues:
+  exclude-dirs:
+    - tests
+  exclude-files:
+    - ".*_test.go"
+    - ".*_mock.go" 
+
+linters:
+  enable:
+    - gofmt
+    - goimports
+    - govet
+    - staticcheck
+    - errcheck 
+    - gocritic 
+    - gosec   
+    - bodyclose    
+    - unconvert     
+    - ineffassign        
+    - prealloc      
+    - nakedret             
+    - misspell     
+    - goconst       
+    - dogsled       
+    - nestif        
+    - noctx         
+    - sqlclosecheck 
+    - wastedassign  
+
+  disable:
+    - lll         
+
+linters-settings:
+  gocritic:
+    enabled-tags:
+      - performance
+      - style
+      - opinionated
+    disabled-tags:
+      - experimental
+  govet:
+    shadow: true
+  gosec:
+    excludes:
+      - G104 
+  dupl:
+    threshold: 30
+
+output:
+  formats: colored-line-number
+  print-issued-lines: true
+  print-linter-name: true

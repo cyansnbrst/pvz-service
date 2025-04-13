@@ -1,0 +1,37 @@
+services:
+  pvz-postgres:
+    container_name: pvz-postgres
+    image: postgres
+    env_file:
+      - .env
+    ports:
+      - "${POSTGRES_PORT}:${POSTGRES_PORT}"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+  pvz-service:
+    container_name: pvz-service
+    build: .
+    env_file:
+      - .env
+    ports:
+      - "${APP_HTTP_PORT}:${APP_HTTP_PORT}"
+      - "${APP_GRPC_PORT}:${APP_GRPC_PORT}"
+      - "${METRICS_PORT}:${METRICS_PORT}"
+    depends_on:
+      - pvz-postgres
+
+  swagger-ui:
+    container_name: swagger-ui
+    image: swaggerapi/swagger-ui
+    ports:
+      - "8085:8080"
+    environment:
+      SWAGGER_JSON: "/swagger.json"
+    volumes:
+      - ./gen/swagger.json:/swagger.json
+    depends_on:
+      - pvz-service
+
+volumes:
+  pg_data:
